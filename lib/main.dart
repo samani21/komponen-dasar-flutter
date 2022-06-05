@@ -18,80 +18,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class FirstScreen extends StatefulWidget {
-  @override
-  _FirstScreenState createState() => _FirstScreenState();
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Scaffold(
-      appBar: AppBar(
-        title: Text('First Screen'),
-      ),
-    ));
-  }
-}
-
-class _FirstScreenState extends State<FirstScreen> {
-  String? language;
-
+class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('First Screen'),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          ListTile(
-            leading: Radio<String>(
-              value: 'Dart',
-              groupValue: language,
-              onChanged: (String? value) {
-                setState(() {
-                  language = value;
-                  showSnackbar();
-                });
-              },
-            ),
-            title: Text('Dart'),
-          ),
-          ListTile(
-            leading: Radio<String>(
-              value: 'Kotlin',
-              groupValue: language,
-              onChanged: (String? value) {
-                setState(() {
-                  language = value;
-                  showSnackbar();
-                });
-              },
-            ),
-            title: Text('Kotlin'),
-          ),
-          ListTile(
-            leading: Radio<String>(
-              value: 'Swift',
-              groupValue: language,
-              onChanged: (String? value) {
-                setState(() {
-                  language = value;
-                  showSnackbar();
-                });
-              },
-            ),
-            title: Text('Swift'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void showSnackbar() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('$language selected'),
-        duration: Duration(seconds: 1),
+      body: Center(
+        child: Image.network(
+          'https://picsum.photos/200/300',
+          width: 200,
+          height: 200,
+        ),
       ),
     );
   }

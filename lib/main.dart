@@ -37,16 +37,40 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('First Screen'),
+      appBar: AppBar(
+        title: Text('First Screen'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Write your name here...',
+                labelText: 'Your Name',
+              ),
+              onChanged: (String value) {
+                setState(() {
+                  _name = value;
+                });
+              },
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        content: Text('Hello, $_name'),
+                      );
+                    });
+              },
+              child: Text('Submit'),
+            )
+          ],
         ),
-        body: TextField(
-          onSubmitted: (String value) {
-            setState(() {
-              _name = value;
-            });
-          },
-        )
-      );
+      ),
+    );
   }
 }

@@ -32,7 +32,7 @@ class FirstScreen extends StatelessWidget {
               style: TextStyle(fontSize: 40),
             ),
             color: Colors.blue,
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.all(10),
           )
           ),
     );

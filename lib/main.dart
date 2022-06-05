@@ -27,14 +27,12 @@ class FirstScreen extends StatelessWidget {
             title: Text('First Screen'),
           ),
           body: Container(
-            child: Text(
-              'Hi',
-              style: TextStyle(fontSize: 40),
-            ),
-            decoration: BoxDecoration(
-              color: Colors.red,
-            ),
-          )
+  child: Text('Hi', style: TextStyle(fontSize: 40),),
+  decoration: BoxDecoration(
+    color: Colors.red,
+    shape: BoxShape.circle,
+  ),
+)
           ),
     );
   }

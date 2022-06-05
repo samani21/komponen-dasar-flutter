@@ -27,7 +27,7 @@ class FirstScreen extends StatelessWidget {
         title: Text('First Screen'),
       ),
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Icon(Icons.share),
           Icon(Icons.thumb_up),

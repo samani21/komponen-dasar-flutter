@@ -23,16 +23,16 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Scaffold(
-      appBar: AppBar(
-        title: Text('First Screen'),
-      ),
-      body: ElevatedButton(
-        onPressed: () {
-          // Aksi ketika button diklik
-        },
-        child: Text("Tombol"),
-      ),
-      )
-    );
+            appBar: AppBar(
+              title: Text('First Screen'),
+            ),
+            body: TextButton(
+              onPressed: () {
+                // Aksi ketika button diklik
+              },
+              child: Text('Text Button'),
+            )
+          )
+        );
   }
 }

@@ -24,7 +24,14 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        body: Center(
+          child: Heading(
+            // mengubah widget Text
+            text: "Hello world!",
+          ),
+        ),
+      ),
     );
   }
 }
@@ -45,6 +52,23 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class Heading extends StatelessWidget {
+  final String text;
+
+  Heading({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {

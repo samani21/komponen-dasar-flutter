@@ -26,11 +26,7 @@ class FirstScreen extends StatelessWidget {
         title: Text('First Screen'),
       ),
       body: Center(
-        child: Image.network(
-          'https://picsum.photos/200/300',
-          width: 200,
-          height: 200,
-        ),
+        child: Image.asset('images/android.jpg', width: 200, height: 200),
       ),
     );
   }

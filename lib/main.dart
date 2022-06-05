@@ -32,9 +32,9 @@ class FirstScreen extends StatelessWidget {
               style: TextStyle(fontSize: 40),
             ),
             decoration: BoxDecoration(
-              color: Colors.red,
-              border: Border.all(color: Colors.green, width: 3),
-            ),
+                color: Colors.red,
+                border: Border.all(color: Colors.green, width: 3),
+                borderRadius: BorderRadius.circular(10)),
           )
           ),
     );

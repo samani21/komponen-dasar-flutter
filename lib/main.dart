@@ -21,57 +21,32 @@ class MyApp extends StatelessWidget {
 class FirstScreen extends StatefulWidget {
   @override
   _FirstScreenState createState() => _FirstScreenState();
-
   Widget build(BuildContext context) {
     return Scaffold(
         body: Scaffold(
-            appBar: AppBar(
-              title: Text('First Screen'),
-            ),
-            body: IconButton(
-              icon: Icon(Icons.volume_up),
-              tooltip: 'Increase volume by 10',
-              onPressed: () {
-                // Aksi ketika button diklik
-              },
-            )
-          )
-        );
+      appBar: AppBar(
+        title: Text('First Screen'),
+      ),
+    ));
   }
 }
 
 class _FirstScreenState extends State<FirstScreen> {
   String? language;
-
+  String _name = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('First Screen'),
-      ),
-      body: DropdownButton<String>(
-        items: const <DropdownMenuItem<String>>[
-          DropdownMenuItem<String>(
-            value: 'Dart',
-            child: Text('Dart'),
-          ),
-          DropdownMenuItem<String>(
-            value: 'Kotlin',
-            child: Text('Kotlin'),
-          ),
-          DropdownMenuItem<String>(
-            value: 'Swift',
-            child: Text('Swift'),
-          ),
-        ],
-        value: language,
-        hint: Text('Select Language'),
-        onChanged: (String? value) {
-          setState(() {
-            language = value;
-          });
-        },
-      ),
-    );
+        appBar: AppBar(
+          title: Text('First Screen'),
+        ),
+        body: TextField(
+          onSubmitted: (String value) {
+            setState(() {
+              _name = value;
+            });
+          },
+        )
+      );
   }
 }

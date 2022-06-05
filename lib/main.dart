@@ -22,12 +22,14 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Scaffold(
-          appBar: AppBar(
-            title: Text('First Screen'),
-          ),
-          body:
-              Padding(padding: EdgeInsets.all(30), child: Text('Ini Padding'))),
+        body: Scaffold(
+      appBar: AppBar(
+        title: Text('First Screen'),
+      ),
+      body: Center(
+        child: Text('Text berada di tengah'),
+      ),
+    )
     );
   }
 }

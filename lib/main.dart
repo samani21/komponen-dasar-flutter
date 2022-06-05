@@ -19,32 +19,46 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstScreen extends StatelessWidget {
-  final List<int> numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.separated(
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 250,
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              border: Border.all(color: Colors.black),
-            ),
-            child: Center(
-              child: Text(
-                '${numberList[index]}',
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) {
-          return Divider();
-        },
-        itemCount: numberList.length,
-      ),
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            color: Colors.red,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.orange,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.yellow,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.green,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.blue,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.indigo,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.purple,
+          ),
+        ),
+      ],
     );
   }
 }

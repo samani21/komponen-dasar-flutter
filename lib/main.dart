@@ -22,32 +22,15 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.white,
+      body: Scaffold(
+          appBar: AppBar(
+            title: Text('First Screen'),
           ),
-          onPressed: () {},
-        ),
-        title: Text('First Screen'),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {},
+          body: Container(
+            child: Text('Hi', style: TextStyle(fontSize: 40)),
+            color: Colors.blue,
+          )
           ),
-        ],
-      ),
-      body: Center(
-        child: Text('Hello world!'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-      ),
     );
   }
 }

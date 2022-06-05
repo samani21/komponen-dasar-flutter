@@ -23,18 +23,19 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Scaffold(
-      appBar: AppBar(
-        title: Text('First Screen'),
-      ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          Icon(Icons.share),
-          Icon(Icons.thumb_up),
-          Icon(Icons.thumb_down),
-        ],
-      ),
-    )
-    );
+            appBar: AppBar(
+              title: Text('First Screen'),
+            ),
+            body: Column(
+              children: <Widget>[
+                Text(
+                  'Sebuah Judul',
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                ),
+                Text('Lorem ipsum dolor sit amet'),
+              ],
+            )
+          )
+        );
   }
 }

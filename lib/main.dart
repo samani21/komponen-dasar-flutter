@@ -23,47 +23,26 @@ class FirstScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+    Orientation orientation = MediaQuery.of(context).orientation;
+ 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('First Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text('Pindah Screen'),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SecondScreen(message)));
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class SecondScreen extends StatelessWidget {
-  final String message;
-
-  SecondScreen(this.message);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Second Screen'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(message),
-            OutlinedButton(
-              child: Text('Kembali'),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
+      backgroundColor: Colors.blueGrey,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            'Screen width: ${screenSize.width.toStringAsFixed(2)}',
+            style: TextStyle(color: Colors.white, fontSize: 18),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            'Orientation: $orientation',
+            style: TextStyle(color: Colors.white, fontSize: 18),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }

@@ -19,85 +19,50 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstScreen extends StatelessWidget {
+  final String message = 'Hello from First Screen!';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      appBar: AppBar(
+        title: Text('First Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Pindah Screen'),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SecondScreen(message)));
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  final String message;
+
+  SecondScreen(this.message);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Screen'),
+      ),
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                ExpandedWidget(),
-                FlexibleWidget(),
-              ],
-            ),
-            Row(
-              children: [
-                ExpandedWidget(),
-                ExpandedWidget(),
-              ],
-            ),
-            Row(
-              children: [
-                FlexibleWidget(),
-                FlexibleWidget(),
-              ],
-            ),
-            Row(
-              children: [
-                FlexibleWidget(),
-                ExpandedWidget(),
-              ],
+            Text(message),
+            OutlinedButton(
+              child: Text('Kembali'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class ExpandedWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.teal,
-          border: Border.all(color: Colors.white),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            'Expanded',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class FlexibleWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Flexible(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.tealAccent,
-          border: Border.all(color: Colors.white),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            'Flexible',
-            style: TextStyle(
-              color: Colors.teal,
-              fontSize: 24,
-            ),
-          ),
         ),
       ),
     );

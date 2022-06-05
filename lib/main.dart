@@ -27,13 +27,12 @@ class FirstScreen extends StatefulWidget {
       appBar: AppBar(
         title: Text('First Screen'),
       ),
-    )
-  );
+    ));
   }
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  bool lightOn = false;
+  bool? agree = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,20 +40,16 @@ class _FirstScreenState extends State<FirstScreen> {
       appBar: AppBar(
         title: Text('First Screen'),
       ),
-      body: Switch(
-        value: lightOn,
-        onChanged: (bool value) {
-          setState(() {
-            lightOn = value;
-          });
-
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(lightOn ? 'Light On' : 'Light Off'),
-              duration: Duration(seconds: 1),
-            ),
-          );
-        },
+      body: ListTile(
+        leading: Checkbox(
+          value: agree,
+          onChanged: (bool? value) {
+            setState(() {
+              agree = value;
+            });
+          },
+        ),
+        title: Text('Agree / Disagree'),
       ),
     );
   }
